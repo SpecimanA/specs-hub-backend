@@ -1,0 +1,15 @@
+{% extends "admin/base_site.html" %}
+{% load i18n %}
+
+{% block content %}
+  <h1>{% trans "אישור שחזור" %}</h1>
+  <p>{% trans "האם אתה בטוח שברצונך לשחזר את המערכת מהגיבוי:" %} <b>{{ backup.backup_file }}</b>?</p>
+
+  <form method="post">
+    {% csrf_token %}
+    <input type="submit" value="{% trans 'שחזר' %}" class="default button">
+    <a href="{% url 'admin:management_systembackup_changelist' %}" class="button">
+      {% trans "ביטול" %}
+    </a>
+  </form>
+{% endblock %}

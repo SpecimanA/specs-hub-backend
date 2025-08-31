@@ -1,0 +1,15 @@
+{% extends "admin/base_site.html" %}
+{% load i18n %}
+
+{% block content_title %}{% trans "צור גיבוי חדש" %}{% endblock %}
+
+{% block content %}
+<div id="content-main">
+    <div class="module">
+        <p>{% trans "האם אתה בטוח שברצונך ליצור גיבוי חדש של המערכת? פעולה זו עשויה לקחת זמן." %}</p>
+        <form action="" method="post">{% csrf_token %}
+            <input type="submit" value="{% trans "צור גיבוי" %}">
+        </form>
+    </div>
+</div>
+{% endblock %}

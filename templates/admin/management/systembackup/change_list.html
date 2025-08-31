@@ -1,0 +1,15 @@
+{% extends "admin/change_list.html" %}
+
+{% block object-tools %}
+    {{ custom_buttons|safe }}
+    {{ block.super }}
+{% endblock %}
+
+{% block content %}
+    <h1>גיבוי מערכת</h1>
+    <p>
+        ניהול גיבויים של המערכת.<br>
+        ניתן ליצור גיבוי חדש, להעלות גיבוי קיים או לשחזר מגיבוי קודם.
+    </p>
+    {{ block.super }}
+{% endblock %}

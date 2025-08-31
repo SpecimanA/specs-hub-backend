@@ -1,0 +1,18 @@
+{% extends "admin/base_site.html" %}
+{% load i18n %}
+
+{% block content_title %}{% trans "העלאת קובץ גיבוי" %}{% endblock %}
+
+{% block content %}
+<div id="content-main">
+    <div class="module">
+        <p>{% trans "אזהרה: שחזור מגיבוי ימחק את כל הנתונים הנוכחיים במערכת." %}</p>
+        <form action="" method="post" enctype="multipart/form-data">{% csrf_token %}
+            <label for="backup_file">{% trans "בחר קובץ גיבוי (ZIP):" %}</label>
+            <input type="file" name="backup_file" required>
+            <br><br>
+            <input type="submit" value="{% trans "העלה ושחזר" %}">
+        </form>
+    </div>
+</div>
+{% endblock %}
